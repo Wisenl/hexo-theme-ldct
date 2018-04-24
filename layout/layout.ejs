@@ -8,13 +8,31 @@
       <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
       <div class="body-wrap"><%- body %></div>
       <canvas id="space" style="position: fixed; left: 0; top: 0; bottom:0; right:0; z-index: -1;" ></canvas>
+      <div class="mobile-wrapper" style="position: fixed; left: 0; top: 0; bottom:0; right:0; z-index: -1;">
+        <ul class="bg-bubbles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
       <script>
-
         (function () {
           var ctx;
           var backgroundColor1='rgb(214,228,240)';
           var backgroundColor2='rgb(134,175,219)';
           var elCanvas = document.getElementById('space');
+          var display = window.getComputedStyle(elCanvas)['display']
+          if (display === 'none') {
+            return
+          }
+          console.log('1111')
           function paintCanvas() {
             var grad = ctx.createLinearGradient(0,1000,1000,1000)
             grad.addColorStop(0, backgroundColor1)
@@ -71,7 +89,7 @@
             elCanvas.width = window.innerWidth
             elCanvas.height = window.innerHeight
 
-            ctx = document.getElementById('space').getContext("2d"), particleCount = 20, particles = [], particleRadius = 5, minDist = 100, velocity = 1, colors = [
+            ctx = document.getElementById('space').getContext("2d"), particleCount = 20, particles = [], particleRadius = 5, minDist = 100, velocity = 10, colors = [
               {r: 117, g: 125, b: 175},
               {r: 68, g: 73, b: 102},
               {r: 248, g: 172, b: 19}
@@ -104,7 +122,5 @@
       <%- partial('_partial/footer') %>
     </div>
     <%- partial('_partial/after-footer') %>
-    <!--<%- partial('_partial/tools') %>-->
   </div>
 </body>
-</html>
