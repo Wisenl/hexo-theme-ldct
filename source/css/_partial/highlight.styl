@@ -3,7 +3,7 @@
 @import "_partial/customise/code-block"
 
 code-bgc = highlight-background
-code-tag = highlight-yellow 
+code-tag = highlight-yellow
 code-attr = highlight-blue
 code-word = highlight-foreground
 code-value = highlight-green
@@ -71,15 +71,15 @@ $line-numbers
       border-radius: 5px
       background-color: #e5edff
       word-wrap: break-word
-      white-space: pre
+      //white-space: pre
       margin: 2px
-      display: inline-block
+    //display: inline-block
     a.fancy-ctn.fancybox::before
       display: none
     a::before
-      padding-right: 6px
-      content: "\f0c1"
-      font: normal normal normal 14px/1 FontAwesome
+        padding-right: 6px
+        content: "\f0c1"
+        font: normal normal normal 14px/1 FontAwesome
     a:hover
       color: #6ab9e8
   h1
@@ -96,7 +96,7 @@ $line-numbers
     padding-bottom: 5px
     text-align: center
   h2::after,h2::before
-    content: " —— "
+       content: " —— "
   h3
     margin: 0.5em auto
     color: #269a8d
@@ -187,7 +187,7 @@ $line-numbers
       margin: 20px 0
       width: auto
       color: #FFF
-      thead 
+      thead
         tr
           background: #2D2D2D
         tr:hover
@@ -214,7 +214,7 @@ $line-numbers
     .line
       font-size: 15px
       height: 1.5em
-  	  color: highlight-foreground
+    color: highlight-foreground
   .gist
     margin: 0 article-padding * -1
     border-style: solid
